@@ -38,7 +38,7 @@
 						<input id="email" name="email2" type="email" placeholder="Enter Your Email"> 
 					</p>
 					<p>
-						<textarea id="email_body" name="email_body" rows="5" cols="40">Enter Content Here</textarea>
+						<textarea id="email_body" name="email_body" rows="10" cols="100">Enter Content Here</textarea>
 					</p>
 					<p>
 						 <button type="submit">Send</button>
