@@ -19,11 +19,11 @@
         				<input id="password" name="password" type="password"placeholder="Enter your password">
     				</p>
     				<p>
-    					<label for=“remember”>Remember Me?</label>
-						<input id =“remember name="memory" type="checkbox">
+    					<label for="remember">Remember Me?</label>
+						<input id ="remember" name="memory" type="checkbox">
     				</p>
     				<p>
-        				<button type="submit"> Log In</button>
+        				 <button type="submit"> Log In</button>
     				</p>
 				</form>
 			</body>
