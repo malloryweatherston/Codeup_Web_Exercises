@@ -41,8 +41,8 @@
 						<textarea id="email_body" name="email_body" rows="10" cols="100" placeholder="Enter Content Here"></textarea>
 					</p>
 					<p>
-						<label for="mailing_list">Would you like to save a copy to your send folder?</label>
-    					<input type="checkbox" id="mailing_list" name="mailing_list" value="yes" checked>
+						<label for="save_copy">Would you like to save a copy to your send folder?</label>
+    					<input type="checkbox" id="save_copy" name="save_copy" value="yes" checked>
 					<p>
 						 <button type="submit">Send</button>
 					</p>
