@@ -84,6 +84,26 @@
 						<label for="food4">
 							<input type="checkbox" id="food4" name="food[]" value="Italian"> Italian</label>	
 					<p>
+						<label for="sport">What sports do you like? (Select all that apply) </label><br>
+							<select id="sport" name="sport[]" multiple>
+    							<option value="Basketball">Basketball</option>
+    							<option value="Golf">Golf</option>
+    							<option value="Tennis">Tennis</option>
+    							<option value="Softball">Softball</option>
+							</select>
+					</p>
+					<p>
+						<button type="submit">Submit</button>
+					</p>
+				</form>
+			<h2>Select Testing</h2>
+				<form method="POST">
+					<label for="age">Are you over the age of 18?</label><br>
+						<select id="age" name="age">
+    						<option value="1">Yes</option>
+    						<option value="0">No</option>
+						</select>
+					<p>
 						<button type="submit">Submit</button>
 					</p>
 				</form>
