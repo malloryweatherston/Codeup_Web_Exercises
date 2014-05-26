@@ -1,1 +1,1 @@
-console.log('Hello from Inline JavaScript!');
+console.log('Hello from External JavaScript!');
