@@ -9,25 +9,25 @@ $address_book = [
     ['David and Norma Laurie', 'Box 229', 'Booker', 'TX', '79005'], 
 ];
 
-$handle = fopen('address_book.csv', 'w');
+$filename = 'address_book.csv'; 
 
-fputcsv($handle, $heading);
 
-foreach($address_book as $fields) {
-	fputcsv($handle, $fields); 
+
+function write_csv($big_array, $filename) {
+		$handle = fopen($filename, 'w');
+		foreach($big_array as $fields) {
+		fputcsv($handle, $fields); 
+		}
+		fclose($handle);
 }
 
-fclose($handle);
+if(!empty($_POST)) {
+	$new_address = [];
+	foreach($_POST as $key => $value) {
+		$new_address[] = $value; 
+	}
+}
 
-// if (isset($_POST['Add_Name'])) {
-// 	for($i=0 ; $i<count($_POST['Add_Name']); $i++) {
-// 		$name = $_POST['Add_Name'][$i];
-// 		$address = $_POST['Add_Address'][$i];
-// 		$city = $_POST['Add_City'][$i];
-// 		$state = $_POST['Add_State'][$i];
-// 		$zip = $_POST['Add_Zip'][$i];
-// 	}
-// }
 function storeEntry($entry) {
 	var_dump($entry);
 	return false; 
@@ -36,11 +36,15 @@ function storeEntry($entry) {
 $is_valid = true; 
 if (!empty($_POST)) {
 	$is_valid = storeEntry($_POST);
-
 	if($is_valid) {
 		$_POST = array();
 	}
 }
+
+
+array_push($address_book, $new_address);
+
+write_csv($address_book, $filename); 
 
 
 
@@ -63,8 +67,9 @@ if (!empty($_POST)) {
        			<td>City</td>
        			<td>State</td>
        			<td>Zip</td>
+
      		</tr>
-     <? foreach ($address_book as $row) : ?>
+     <? foreach($address_book as $row) : ?>
      <tr>
        <td><? echo $row[0]; ?></td>
        <td><? echo $row[1]; ?></td>
@@ -74,6 +79,7 @@ if (!empty($_POST)) {
        <td><?= !empty($row[5]) ? $row[5] : "";?></td> 
      </tr>
      <? endforeach;?>
+     
      <? if (!$is_valid): ?>
      	<p>All form inputs are required.</p>
  	<? endif?>
