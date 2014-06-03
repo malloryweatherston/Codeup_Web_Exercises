@@ -1,4 +1,41 @@
 <?
+class AddressDataStore {
+
+    public $filename = 'address_book.csv';
+
+    public function read_address_book()
+    {
+        // Code to read file $this->filename
+
+			$entries = [];
+			$handle = fopen($this->filename, 'r');
+			while(!feof($handle)) {
+				$row = fgetcsv($handle);
+				if(is_array($row)) {
+					$entries[] = $row;
+				}
+			}
+			fclose($handle);
+			return $entries;
+    }
+
+    public function write_address_book($big_array) 
+    {
+        // Code to write $addresses_array to file $this->filename
+        $handle = fopen($this->filename, 'w');
+		foreach($big_array as $fields) {
+		fputcsv($handle, $fields); 
+		}
+		fclose($handle);
+
+    }
+
+}
+
+$ads = new AddressDataStore();
+
+
+
 $heading = ['name', 'address', 'city', 'state', 'zip']; 
 
 $address_book = [];
@@ -10,17 +47,17 @@ $address_book = [];
 //     ['David and Norma Laurie', 'Box 229', 'Booker', 'TX', '79005'], 
 // ];
 
-$filename = 'address_book.csv'; 
-$address_book = read_csv($filename);
+$ads->filename; 
+//$address_book = read_csv($filename);
+$address_book = $ads->read_address_book();
 
-
-function write_csv($big_array, $filename) {
-		$handle = fopen($filename, 'w');
-		foreach($big_array as $fields) {
-		fputcsv($handle, $fields); 
-		}
-		fclose($handle);
-}
+// function write_csv($big_array, $filename) {
+// 		$handle = fopen($filename, 'w');
+// 		foreach($big_array as $fields) {
+// 		fputcsv($handle, $fields); 
+// 		}
+// 		fclose($handle);
+// }
 
 $new_address = [];
 if (!empty($_POST['Add_Name']) && !empty($_POST['Add_Address']) && !empty($_POST['Add_City']) && !empty($_POST['Add_State']) && !empty($_POST['Add_Zip'])) {
@@ -30,9 +67,10 @@ if (!empty($_POST['Add_Name']) && !empty($_POST['Add_Address']) && !empty($_POST
     $new_address['Add_City'] = $_POST['Add_City'];
     $new_address['Add_State'] = $_POST['Add_State'];
     $new_address['Add_Zip'] = $_POST['Add_Zip'];
-    	
+
     array_push($address_book, $new_address);
-	write_csv($address_book, $filename); 
+    $ads->write_address_book($address_book);
+	//write_csv($address_book, $filename); 
 } else {
 	foreach ($_POST as $key => $value) {
         if (empty($value)) {
@@ -44,25 +82,25 @@ if (!empty($_POST['Add_Name']) && !empty($_POST['Add_Address']) && !empty($_POST
 
 
 
-function read_csv($filename) {
-	$entries = [];
-	$handle = fopen($filename, 'r');
-	while(!feof($handle)) {
-		$row = fgetcsv($handle);
-		if(is_array($row)) {
-			$entries[] = $row;
-		}
-	}
-	fclose($handle);
-	return $entries;
-}
+// function read_csv($filename) {
+// 	$entries = [];
+// 	$handle = fopen($filename, 'r');
+// 	while(!feof($handle)) {
+// 		$row = fgetcsv($handle);
+// 		if(is_array($row)) {
+// 			$entries[] = $row;
+// 		}
+// 	}
+// 	fclose($handle);
+// 	return $entries;
+// }
 
 
 
 if (isset($_GET['removeIndex'])) {
 	$removeIndex = $_GET['removeIndex'];
 	unset($address_book[$removeIndex]);
-	write_csv($address_book, $filename); 
+	$ads->write_address_book($address_book); 
 }
 
 
