@@ -1,16 +1,17 @@
 <?
 $heading = ['name', 'address', 'city', 'state', 'zip']; 
 
-$address_book = [
-    ['The White House', '1600 Pennsylvania Avenue NW', 'Washington', 'DC', '20500'],
-    ['Marvel Comics', 'P.O. Box 1527', 'Long Island City', 'NY', '11101'],
-    ['LucasArts', 'P.O. Box 29901', 'San Francisco', 'CA', '94129-0901'],
-    ['Mallory Weatherston', '245 E. Nottingham', 'San Antonio', 'TX', '78209'],
-    ['David and Norma Laurie', 'Box 229', 'Booker', 'TX', '79005'], 
-];
+$address_book = [];
+// $address_book = [
+//     ['The White House', '1600 Pennsylvania Avenue NW', 'Washington', 'DC', '20500'],
+//     ['Marvel Comics', 'P.O. Box 1527', 'Long Island City', 'NY', '11101'],
+//     ['LucasArts', 'P.O. Box 29901', 'San Francisco', 'CA', '94129-0901'],
+//     ['Mallory Weatherston', '245 E. Nottingham', 'San Antonio', 'TX', '78209'],
+//     ['David and Norma Laurie', 'Box 229', 'Booker', 'TX', '79005'], 
+// ];
 
 $filename = 'address_book.csv'; 
-
+$address_book = read_csv($filename);
 
 
 function write_csv($big_array, $filename) {
@@ -29,9 +30,8 @@ if (!empty($_POST['Add_Name']) && !empty($_POST['Add_Address']) && !empty($_POST
     $new_address['Add_City'] = $_POST['Add_City'];
     $new_address['Add_State'] = $_POST['Add_State'];
     $new_address['Add_Zip'] = $_POST['Add_Zip'];
-		
+    	
     array_push($address_book, $new_address);
-
 	write_csv($address_book, $filename); 
 } else {
 	foreach ($_POST as $key => $value) {
@@ -42,6 +42,28 @@ if (!empty($_POST['Add_Name']) && !empty($_POST['Add_Address']) && !empty($_POST
 }
 
 
+
+
+function read_csv($filename) {
+	$entries = [];
+	$handle = fopen($filename, 'r');
+	while(!feof($handle)) {
+		$row = fgetcsv($handle);
+		if(is_array($row)) {
+			$entries[] = $row;
+		}
+	}
+	fclose($handle);
+	return $entries;
+}
+
+
+
+if (isset($_GET['removeIndex'])) {
+	$removeIndex = $_GET['removeIndex'];
+	unset($address_book[$removeIndex]);
+	write_csv($address_book, $filename); 
+}
 
 
 
@@ -55,7 +77,7 @@ if (!empty($_POST['Add_Name']) && !empty($_POST['Add_Address']) && !empty($_POST
 	</head>
 	<body>
 		<h1>Address Book</h1>
-			<table>
+			<table border='1'>
      		<tr>
        			<td>Name</td>
        			<td>Address</td>
@@ -64,11 +86,12 @@ if (!empty($_POST['Add_Name']) && !empty($_POST['Add_Address']) && !empty($_POST
        			<td>Zip</td>
 
      		</tr>
-       <? foreach ($address_book as $fields) : ?>
+       <? foreach ($address_book as $key => $fields) : ?>
                 <tr>
                     <? foreach ($fields as $value): ?>
-                        <td><?= $value; ?></td>
+                        <td><?= htmlspecialchars(strip_tags($value));?></td>
                     <? endforeach; ?>
+                    	<td><?="<a href=\"address_book.php?removeIndex={$key}\"> Delete Contact</a>";?></td>
                 </tr>
        <? endforeach; ?>
      
