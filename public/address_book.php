@@ -21,30 +21,25 @@ function write_csv($big_array, $filename) {
 		fclose($handle);
 }
 
-if(!empty($_POST)) {
-	$new_address = [];
-	foreach($_POST as $key => $value) {
-		$new_address[] = $value; 
-	}
+$new_address = [];
+if (!empty($_POST['Add_Name']) && !empty($_POST['Add_Address']) && !empty($_POST['Add_City']) && !empty($_POST['Add_State']) && !empty($_POST['Add_Zip'])) {
+
+  	$new_address['Add_Name'] = $_POST['Add_Name'];
+    $new_address['Add_Address'] = $_POST['Add_Address'];
+    $new_address['Add_City'] = $_POST['Add_City'];
+    $new_address['Add_State'] = $_POST['Add_State'];
+    $new_address['Add_Zip'] = $_POST['Add_Zip'];
+		
+    array_push($address_book, $new_address);
+
+	write_csv($address_book, $filename); 
+} else {
+	foreach ($_POST as $key => $value) {
+        if (empty($value)) {
+            echo "<h1>" . ucfirst($key) .  " is empty.</h1>";
+    	}
+    }
 }
-
-function storeEntry($entry) {
-	var_dump($entry);
-	return false; 
-}
-
-$is_valid = true; 
-if (!empty($_POST)) {
-	$is_valid = storeEntry($_POST);
-	if($is_valid) {
-		$_POST = array();
-	}
-}
-
-
-array_push($address_book, $new_address);
-
-write_csv($address_book, $filename); 
 
 
 
@@ -69,27 +64,21 @@ write_csv($address_book, $filename);
        			<td>Zip</td>
 
      		</tr>
-     <? foreach($address_book as $row) : ?>
-     <tr>
-       <td><? echo $row[0]; ?></td>
-       <td><? echo $row[1]; ?></td>
-       <td><? echo $row[2]; ?></td>
-       <td><? echo $row[3]; ?></td>
-       <td><? echo $row[4]; ?></td>
-       <td><?= !empty($row[5]) ? $row[5] : "";?></td> 
-     </tr>
-     <? endforeach;?>
+       <? foreach ($address_book as $fields) : ?>
+                <tr>
+                    <? foreach ($fields as $value): ?>
+                        <td><?= $value; ?></td>
+                    <? endforeach; ?>
+                </tr>
+       <? endforeach; ?>
      
-     <? if (!$is_valid): ?>
-     	<p>All form inputs are required.</p>
- 	<? endif?>
    </table>
 		<h2>Add an Entry to the Address Book</h2>
 
 			<form method="POST" action="/address_book.php">
 				<p>
 					<label for="Add_Name">Name:</label>
-					<input id="Add_Name" name="Add_Name" type="text" placeholder="Enter Name Here"> 
+					<input id="Add_Name" name="Add_Name" type="text" placeholder="Enter Name Here">
 				</p>
 				<p>
 					<label for="Add_Address">Address:</label>
