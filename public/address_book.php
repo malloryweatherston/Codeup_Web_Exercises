@@ -1,6 +1,6 @@
 <?
 // include Conversation class file
-include('classes/address_data_store.php');
+require_once('classes/address_data_store.php');
 
 $ads = new AddressDataStore('address_book.csv');
 
