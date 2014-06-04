@@ -1,7 +1,7 @@
 <?
 class AddressDataStore {
 
-    public $filename = 'address_book.csv';
+    public $filename = '';
 
     public function __construct($filename = 'address_book.csv')
     {
@@ -29,11 +29,12 @@ class AddressDataStore {
         // Code to write $addresses_array to file $this->filename
         $handle = fopen($this->filename, 'w');
 		foreach($big_array as $fields) {
-		fputcsv($handle, $fields); 
+			fputcsv($handle, $fields); 
 		}
 		fclose($handle);
 
     }
+
 
 }
 
@@ -44,25 +45,13 @@ $ads = new AddressDataStore('address_book.csv');
 $heading = ['name', 'address', 'city', 'state', 'zip']; 
 
 $address_book = [];
-// $address_book = [
-//     ['The White House', '1600 Pennsylvania Avenue NW', 'Washington', 'DC', '20500'],
-//     ['Marvel Comics', 'P.O. Box 1527', 'Long Island City', 'NY', '11101'],
-//     ['LucasArts', 'P.O. Box 29901', 'San Francisco', 'CA', '94129-0901'],
-//     ['Mallory Weatherston', '245 E. Nottingham', 'San Antonio', 'TX', '78209'],
-//     ['David and Norma Laurie', 'Box 229', 'Booker', 'TX', '79005'], 
-// ];
 
-$ads->filename; 
+
+//$ads->filename = ; 
 //$address_book = read_csv($filename);
 $address_book = $ads->read_address_book();
 
-// function write_csv($big_array, $filename) {
-// 		$handle = fopen($filename, 'w');
-// 		foreach($big_array as $fields) {
-// 		fputcsv($handle, $fields); 
-// 		}
-// 		fclose($handle);
-// }
+
 
 $new_address = [];
 if (!empty($_POST['Add_Name']) && !empty($_POST['Add_Address']) && !empty($_POST['Add_City']) && !empty($_POST['Add_State']) && !empty($_POST['Add_Zip'])) {
@@ -87,25 +76,36 @@ if (!empty($_POST['Add_Name']) && !empty($_POST['Add_Address']) && !empty($_POST
 
 
 
-// function read_csv($filename) {
-// 	$entries = [];
-// 	$handle = fopen($filename, 'r');
-// 	while(!feof($handle)) {
-// 		$row = fgetcsv($handle);
-// 		if(is_array($row)) {
-// 			$entries[] = $row;
-// 		}
-// 	}
-// 	fclose($handle);
-// 	return $entries;
-// }
-
-
 
 if (isset($_GET['removeIndex'])) {
 	$removeIndex = $_GET['removeIndex'];
 	unset($address_book[$removeIndex]);
 	$ads->write_address_book($address_book); 
+}
+
+// Verify there were uploaded files and no errors
+if (count($_FILES) > 0 && $_FILES['file1']['error'] == 0) {
+	if($_FILES['file1']['type'] == 'text/csv') {
+    // Set the destination directory for uploads
+    $upload_dir = '/vagrant/sites/codeup.dev/public/uploads/';
+    // Grab the filename from the uploaded file by using basename
+    $uploaded_filename = basename($_FILES['file1']['name']);
+    // Create the saved filename using the file's original name and our upload directory
+    $saved_filename = $upload_dir . $uploaded_filename;
+    // Move the file from the temp location to our uploads directory
+    move_uploaded_file($_FILES['file1']['tmp_name'], $saved_filename);
+	//Open/Upload a new file
+	$upf = new AddressDataStore($saved_filename);
+	$addresses_uploaded = $upf->read_address_book(); 
+	//Merge original array with new uploaded files
+	$address_book = array_merge($address_book, $addresses_uploaded);
+	$ads->write_address_book($address_book); 
+
+	//Error echoed if file type is not "text/plain"
+	}else {
+		$error_message = "ERROR: File Type Must be text/csv." .PHP_EOL;
+	}
+	
 }
 
 
@@ -165,6 +165,17 @@ if (isset($_GET['removeIndex'])) {
 				<p>
 					<button type="Submit">Add</button>
 				</p>
+			</form>
+		<h2>Upload File</h2>
+
+			<form method="POST" enctype="multipart/form-data" action="/address_book.php">
+    			<p>
+        			<label for="file1">File to upload: </label>
+        			<input type="file" id="file1" name="file1">
+    			</p>
+   				<p>
+        			<input type="submit" value="Upload">
+        		</p>
 			</form>
 	</body>
 </html>
