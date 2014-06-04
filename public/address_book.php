@@ -35,11 +35,6 @@ class AddressDataStore {
 
     }
 
-      function __destruct() 
-    {
-        echo "Class Dismissed!\n";
-    }
-
 
 }
 
@@ -113,7 +108,6 @@ if (count($_FILES) > 0 && $_FILES['file1']['error'] == 0) {
 	
 }
 
-unset($ads);
 
 ?>
 
