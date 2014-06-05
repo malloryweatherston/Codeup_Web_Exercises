@@ -1,0 +1,40 @@
+		.box{
+				width: 150px;
+				height: 50px;
+				border: 1px solid black;
+				margin-bottom: 10 px;
+				font-weight: bold;
+				padding: 20px 20px;
+				color:#FFF;
+
+			}
+
+			.red{
+				background-color: #FF211C;
+
+			}
+
+			.orange{
+				background-color: #FF7526;
+				margin-left: 30px;
+			}
+
+			.yellow{
+				background-color: #FFD515;
+				margin-left: 60px;
+			}
+
+			.green{
+				background-color: #1EE824;
+				margin-left: 90px;
+			}
+
+			.blue{
+				background-color: #2E44FF;
+				margin-left: 120px;
+			}
+
+			.purple{
+				background-color: #9B1DFF;
+				margin-left: 150px;
+			}
