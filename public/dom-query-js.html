@@ -40,19 +40,23 @@
         
             if(i%2 == 0) {
                 listItems[i].style['color'] = '#AAA';
-            }
 
 
         }
         // todo: set text color of li with dbid = 1 to blue
-        listItems[0].style['color'] = 'blue';
+        //listItems[0].style['color'] = 'blue';
+            var dbId = listItems[i].attributes['data-dbid'].value;
+            if (dbId == "1") {
+                listItems[i].style['color'] = 'blue';
+                }
+        }
 
         // todo: get all elements with class name sub-paragraph
-        var subParagraphs = document.getElementsByClassName("sub-paragraph")[0];
+        var subParagraphs = document.getElementsByClassName("sub-paragraph");
         
 
         // todo: change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs.innerText = "Mission Accomplished!";
+        subParagraphs[0].innerText = "Mission Accomplished!";
         console.log(subParagraphs);
 
     </script>
