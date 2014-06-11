@@ -7,7 +7,27 @@
 		<script>
 			$(document).ready(function() {
 	    		alert( 'The DOM has finished loading!' );
+	    		var contents = $('#header').html();
+	    		alert(contents);
+	    		var list = $('#list').html();
+	    		alert(list);
+	    		var paragraph = $('.paragraph').html();
+	    		alert(paragraph);
 			});
+
 		</script>
+		<div id = "header">
+			<h1>Hello World!!!</h1>
+		</div>
+		<p class = "paragraph">How are you doing today??</p>
+		<div id = "list">
+			<ul>
+				<li>Good</li>
+				<li>Awesome!</li>
+				<li>Bad</li>
+				<li>Tired</li>
+			</ul>
+		</div>
+
 	</body>
 </html>
