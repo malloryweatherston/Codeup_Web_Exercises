@@ -6,22 +6,16 @@
 	<body>
 		<script>
 			$(document).ready(function() {
-	    		alert( 'The DOM has finished loading!' );
-	    		var contents = $('#header').html();
-	    		alert(contents);
-	    		var list = $('#list').html();
-	    		alert(list);
-	    		var paragraph = $('.paragraph').html();
-	    		alert(paragraph);
+	    		$('.codeup').css('border', 'solid 1px red');
 			});
 
 		</script>
-		<div id = "header">
+		<div class = "codeup">
 			<h1>Hello World!!!</h1>
 		</div>
-		<p class = "paragraph">How are you doing today??</p>
-		<div id = "list">
-			<ul>
+		<p class = "codeup">How are you doing today??</p>
+		<div>
+			<ul class = "codeup">
 				<li>Good</li>
 				<li>Awesome!</li>
 				<li>Bad</li>
