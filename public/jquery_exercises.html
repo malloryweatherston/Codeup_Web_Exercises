@@ -4,17 +4,10 @@
 	<script src="/JS/jquery.js"></script>
 </head>
 	<body>
-		<script>
-			$(document).ready(function() {
-	    		$('li').css('font-size', '20px').css('background-color', '#FFFF00');
-	    		$('h1 , p').css('background-color', '#FFFF00');
-			});
-
-		</script>
 		<div class = "codeup">
 			<h1 class = "Header">Hello World!!!</h1>
 		</div>
-		<p class = "codeup">How are you doing today??</p>
+		<p class = "paragraph">How are you doing today??</p>
 		<div>
 			<ul class = "codeup">
 				<li>Good</li>
@@ -23,6 +16,24 @@
 				<li>Tired</li>
 			</ul>
 		</div>
+		<script>
+			$('.Header').click(function() {
+                $('.Header').css('color', 'blue');
+            });
+
+            $('.paragraph').dblclick(function() {
+                $('.paragraph').css('font-size', '18px');
+            });
+
+            $('li').hover(function() {
+                   $(this).css('color', 'red');
+                },
+                function() {
+                    $(this).css('color', '#FFF');
+                }
+            );
+
+		</script>
 
 	</body>
 </html>
