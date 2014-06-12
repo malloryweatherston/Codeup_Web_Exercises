@@ -17,7 +17,7 @@
 
             $('#makeInvisible').click(function(event) {
                event.preventDefault();
-               $('dd').toggle();
+               $('dd').fadeToggle();
             });
 
             // $('li').click(function() {
@@ -25,10 +25,10 @@
             //     $(this).parent().addClass('invisible');
             // });
             $('#national-parks-toggle').click(function() {
-                $('#nationalParks').hide();
+                $('#nationalParks').fadeOut();
             });
             $('#state-parks-texas-toggle').click(function() {
-                $('#stateParks').hide();
+                $('#stateParks').fadeOut();
             });
 
         });
