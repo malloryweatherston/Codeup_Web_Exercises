@@ -2,9 +2,9 @@
 <head>
 	<title>jquery faq</title>
 	  <style>
-        .invisible {
-            display: none;
-        }
+        /*.invisible {*/
+           /*display: none;*/
+        /*}*/
 
     </style>
 	<script src="/JS/jquery.js"></script>
@@ -13,14 +13,22 @@
         	$('#nationalParks').children().first().css('font-weight', 'bold');
         	$('#stateParks').children().first().css('font-weight', 'bold');
         	$('dd').css('background-color', '#72FFFE')
+         
+
             $('#makeInvisible').click(function(event) {
-                event.preventDefault();
-                $('dd').toggleClass('invisible');
+               event.preventDefault();
+               $('dd').toggle();
             });
 
-            $('li').click(function() {
-            	console.log($(this).parent());
-                $(this).parent().addClass('invisible');
+            // $('li').click(function() {
+            // 	console.log($(this).parent());
+            //     $(this).parent().addClass('invisible');
+            // });
+            $('#national-parks-toggle').click(function() {
+                $('#nationalParks').hide();
+            });
+            $('#state-parks-texas-toggle').click(function() {
+                $('#stateParks').hide();
             });
 
         });
@@ -30,33 +38,33 @@
 		<h1>FAQs About National Parks</h1>
 		<dl>
   			<dt>What government agency oversees the National Park Service?</dt>
-    			<dd class = "invisible">The National Park Service is a bureau of the Department of the Interior. Directly overseeing its operation is the Department's Assistant Secretary for Fish and Wildlife and Parks.</dd>
+    			<dd>The National Park Service is a bureau of the Department of the Interior. Directly overseeing its operation is the Department's Assistant Secretary for Fish and Wildlife and Parks.</dd>
   			<dt>How old is the national park system?</dt>
-    			<dd class = "invisible">The National Park Service was created by an Act signed by President Woodrow Wilson on August 25, 1916. Yellowstone National Park was established by an Act signed by President Ulysses S. Grant on March 1, 1872, as the nation's first national park. View the national park system Timeline.</dd>
+    			<dd>The National Park Service was created by an Act signed by President Woodrow Wilson on August 25, 1916. Yellowstone National Park was established by an Act signed by President Ulysses S. Grant on March 1, 1872, as the nation's first national park. View the national park system Timeline.</dd>
     		<dt>How many employees are in the National Park Service?</dt>
-    			<dd class = "invisible">Permanent, Temporary, and Seasonal - Approximately 22,000 diverse professionals
+    			<dd>Permanent, Temporary, and Seasonal - Approximately 22,000 diverse professionals
 				Volunteers in Parks - 221,000</dd>
 			<dt>What is the National Park Service budget?</dt>
-				<dd class = "invisible">FY 2012 Enacted - $2.98 billion
+				<dd>FY 2012 Enacted - $2.98 billion
 					FY 2013 Request - $2.99 billion</dd>
 			<dt>How do I obtain a park pass?</dt>
-				<dd class = "invisible">Visitors can obtain park passes by visiting their nearest park site. Most sites have passes available, however it is recommended to call a park prior to your visit. Learn more about the America the Beautiful - National Parks and Federal Recreation Lands Pass.</dd>
+				<dd>Visitors can obtain park passes by visiting their nearest park site. Most sites have passes available, however it is recommended to call a park prior to your visit. Learn more about the America the Beautiful - National Parks and Federal Recreation Lands Pass.</dd>
 			<dt>How do I make reservations for camping/lodging in national parks?</dt>
-				<dd class = "invisible">For campground reservations go here. Not all parks participate in this service, many campgrounds are first come, first served. For more information on specific camping and lodging services offered at the park(s) of your interest, please check their homepage by using our search feature.</dd>
+				<dd>For campground reservations go here. Not all parks participate in this service, many campgrounds are first come, first served. For more information on specific camping and lodging services offered at the park(s) of your interest, please check their homepage by using our search feature.</dd>
 			<dt>What do I need to know about driving off road in national parks?</dt>
-				<dd class = "invisible">Before you head out, check with the national parks that you intend to visit. In many national parks, off-road driving is illegal. Where off-road driving is allowed, the National Park Service regulates it.</dd>
+				<dd>Before you head out, check with the national parks that you intend to visit. In many national parks, off-road driving is illegal. Where off-road driving is allowed, the National Park Service regulates it.</dd>
 			<dt>What are concessions?</dt>
-				<dd class = "invisible">There are more than 630 NPS concessionaires (in 128 different park units) which vary in size from small, family-owned businesses to national/international corporations. Concessionaires provide park visitors with lodging, transportation, food services, shops, and other services. Learn more about commercial services in the National Park Service.</dd>
+				<dd>There are more than 630 NPS concessionaires (in 128 different park units) which vary in size from small, family-owned businesses to national/international corporations. Concessionaires provide park visitors with lodging, transportation, food services, shops, and other services. Learn more about commercial services in the National Park Service.</dd>
 			<dt>What role did the National Park Service have in the Deepwater Horizon oil spill response?</dt>
-				<dd class = "invisible">The National Park Service was an integral part of the national federal response to the explosion of the Deepwater Horizon drilling rig which occurred in the Gulf of Mexico on April 20, 2010. Find more information about our role and how we will continue to protect your national parks.</dd>
+				<dd>The National Park Service was an integral part of the national federal response to the explosion of the Deepwater Horizon drilling rig which occurred in the Gulf of Mexico on April 20, 2010. Find more information about our role and how we will continue to protect your national parks.</dd>
 			<dt>What is the origin of the National Park Service arrowhead?</dt>
-				<dd class = "invisible">The arrowhead was authorized as the official National Park Service emblem by the Secretary of the Interior on July 20, 1951. The Sequoia tree and bison represent vegetation and wildlife, the mountains and water represent scenic and recreational values, and the arrowhead represents historical and archeological values. It was registered Feb. 9, 1965, by the U.S. Patent Office as the official emblem of the NPS. Further information on the Arrowhead, including definitions, uses, powers to revoke uses, and penalties for wrongful use can be found in Title 36 Code of Federal Regulations 11.1-4.</dd>
+				<dd>The arrowhead was authorized as the official National Park Service emblem by the Secretary of the Interior on July 20, 1951. The Sequoia tree and bison represent vegetation and wildlife, the mountains and water represent scenic and recreational values, and the arrowhead represents historical and archeological values. It was registered Feb. 9, 1965, by the U.S. Patent Office as the official emblem of the NPS. Further information on the Arrowhead, including definitions, uses, powers to revoke uses, and penalties for wrongful use can be found in Title 36 Code of Federal Regulations 11.1-4.</dd>
 		</dl>
 
 		<a href="#" id="makeInvisible">Click to Show the Answers</a>
 
 		    <h1>Parks List</h1>
-			    <h3>National Parks</h3>
+			    <h3 id="national-parks-toggle">National Parks</h3>
 			    <ul id="nationalParks">
 			        <li>Arches</li>
 			        <li>Badlands</li>
@@ -64,7 +72,7 @@
 			        <li>Denali</li>
 			        <li>Everglades</li>
 			    </ul>
-			    <h3>State Parks of Texas</h3>
+			    <h3 id="state-parks-texas-toggle">State Parks of Texas</h3>
 			    <ul id="stateParks">
 			        <li>Abilene</li>
 			        <li>Big Bend</li>
