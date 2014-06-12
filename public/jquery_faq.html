@@ -10,11 +10,19 @@
 	<script src="/JS/jquery.js"></script>
 	<script>
         $('document').ready(function() {
+        	$('#nationalParks').children().first().css('font-weight', 'bold');
+        	$('#stateParks').children().first().css('font-weight', 'bold');
         	$('dd').css('background-color', '#72FFFE')
             $('#makeInvisible').click(function(event) {
                 event.preventDefault();
                 $('dd').toggleClass('invisible');
             });
+
+            $('li').click(function() {
+            	console.log($(this).parent());
+                $(this).parent().addClass('invisible');
+            });
+
         });
     </script>
 </head>
@@ -46,6 +54,24 @@
 		</dl>
 
 		<a href="#" id="makeInvisible">Click to Show the Answers</a>
+
+		    <h1>Parks List</h1>
+			    <h3>National Parks</h3>
+			    <ul id="nationalParks">
+			        <li>Arches</li>
+			        <li>Badlands</li>
+			        <li>Carlsbad Caverns</li>
+			        <li>Denali</li>
+			        <li>Everglades</li>
+			    </ul>
+			    <h3>State Parks of Texas</h3>
+			    <ul id="stateParks">
+			        <li>Abilene</li>
+			        <li>Big Bend</li>
+			        <li>Choke Canyon</li>
+			        <li>Davis Mountains</li>
+			        <li>Enchanted Rock</li>
+			    </ul>
 
 	</body>
 </html>
