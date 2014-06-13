@@ -8,23 +8,29 @@
 	<script>
 		$('document').ready(function() {
 			var intervalID = setInterval(function(){myRandom()}, 1500);
-	        	
+	        var counter = 0;	
 				function myRandom(){
 		        	var random = Math.floor(Math.random()*9);
 				 	$(".box").eq(random).html("<img src='mole.jpeg' />");
 				 	//$('img').fadeOut(1500);   
 				 	$('img').click(function() {
 	                	$(this).fadeOut().remove();
+	                	 counter += 1; 
+						$('.score').html(counter);
 					});
 					$('img').fadeOut(1500); 
+					//  counter += 1; 
+					// $('.score').html(counter);
 
 			 	}
+    	
 
-    	});
+			// $('div').on('click', 'img', function(event) {
+			// 	 counter += 1; 
+			// 	$('.score').html('counter');
+			// }
 
-
-			
-
+		});
 
 
 	</script>
@@ -33,7 +39,7 @@
 	<body>
 		<h1>Whack-A-Mole!!!</h1>
 		<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
-		<h2>Score:</h2>
+		<h2>Score: </h2> <h2 class="score">0</h2>
 		<div>
 		    <div id="1" class="box left top">
 		    	<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
