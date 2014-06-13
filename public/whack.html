@@ -7,32 +7,32 @@
 	<script src="/JS/jquery.js"></script>
 	<script>
 		$('document').ready(function() {
-			$('button').click(function() {			
+			$('button').click(function() {
+				var timerID = setInterval(function(){myTimer()},1000)			
 				var intervalID = setInterval(function(){myRandom()}, 1500);
 		        var counter = 0;	
+		        var timer = 30;
 					function myRandom(){
 			        	var random = Math.floor(Math.random()*9);
 					 	$(".box").eq(random).html("<img src='mole.jpeg' />");
-					 	//$('img').fadeOut(1500);   
 					 	$('img').click(function() {
 		                	$(this).fadeOut().remove();
 		                	 counter += 1; 
 							$('.score').html(counter);
 						});
 						$('img').fadeOut(1500); 
-						//  counter += 1; 
-						// $('.score').html(counter);
-
 				 	}
-	    	
-
-				// $('div').on('click', 'img', function(event) {
-				// 	 counter += 1; 
-				// 	$('.score').html('counter');
-				// }
-
+				 	function myTimer(){
+				 		timer -= 1;
+				 		$('.timer').html(timer);
+				 		if (timer == 0){
+				 			alert('GAME OVER!');
+				 		}
+				 	}
 			});
+
 		});
+
 
 
 	</script>
@@ -41,7 +41,8 @@
 	<body>
 		<h1>Whack-A-Mole!!!</h1>
 		<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
-		<h2>Score: </h2> <h2 class="score">0</h2>
+		<h3>Score: </h3> <h3 class="score">0</h3>
+		<h3>Timer: </h3> <h3 class="timer">30</h3>
 
 		<p>
 			<button type="button">Start Game</button>
