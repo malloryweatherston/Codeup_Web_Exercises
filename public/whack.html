@@ -7,13 +7,15 @@
 	<script src="/JS/jquery.js"></script>
 	<script>
 		$('document').ready(function() {
-        	$('#mole').fadeIn(1000);
-            $('#mole').click(function() {
+        	$('img').fadeIn(1000);
+            $('img').click(function() {
                 $(this).fadeOut();
             });
+
+            
          
-         	var random = Math.floor(Math.random()*10);
-		 	$(".box").eq(random).css('background-color','red');
+         	var random = Math.floor(Math.random()*9);
+		 	$(".box").eq(random).prepend("<img src='mole.jpeg' />");
     	});
 
 			
@@ -27,15 +29,25 @@
 		<h1 class="left">Whack-A-Mole!!!</h1>
 		<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
 		<div>
-		    <div id="1" class="box left top"></div>
-		    <div id="2" class="box top"></div>
-		    <div id="3" class="box top"></div>
-		    <div id="4" class="box clear left"></div>
-		    <div id="5" class="box"></div>
-		    <div id="6" class="box"></div>
-		    <div id="7" class="box clear left bottom"></div>
-		    <div id="8" class="box bottom"></div>
-		    <div id="9" class="box bottom"></div>
+		    <div id="1" class="box left top">
+		    </div>
+		    <div id="2" class="box top">
+		    </div>
+
+		    <div id="3" class="box top">
+		    </div>
+		    <div id="4" class="box clear left">
+		    </div>
+		    <div id="5" class="box">
+		    </div>
+		    <div id="6" class="box">
+		    </div>
+		    <div id="7" class="box clear left bottom">
+		    </div>
+		    <div id="8" class="box bottom">
+		    </div>
+		    <div id="9" class="box bottom">
+		    </div>
 		</div>
 
 
