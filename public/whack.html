@@ -7,21 +7,21 @@
 	<script src="/JS/jquery.js"></script>
 	<script>
 		$('document').ready(function() {
-			var intervalID = setInterval(function(){myRandom()}, 1000);
+			var intervalID = setInterval(function(){myRandom()}, 1500);
 	        	
 				function myRandom(){
 		        	var random = Math.floor(Math.random()*9);
-				 	$(".box").eq(random).prepend("<img src='mole.jpeg' />");
-				 	$('img').fadeOut(1000);
+				 	$(".box").eq(random).html("<img src='mole.jpeg' />");
+				 	//$('img').fadeOut(1500);   
+				 	$('img').click(function() {
+	                	$(this).fadeOut().remove();
+					});
+					$('img').fadeOut(1500); 
 
 			 	}
 
-	        	$('img').fadeIn(1000);
-	            $('img').click(function() {
-	                $(this).fadeOut();
-				});
-
     	});
+
 
 			
 
@@ -31,27 +31,37 @@
 
 </head> 
 	<body>
-		<h1 class="left">Whack-A-Mole!!!</h1>
+		<h1>Whack-A-Mole!!!</h1>
 		<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
+		<h2>Score:</h2>
 		<div>
 		    <div id="1" class="box left top">
+		    	<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
 		    </div>
 		    <div id="2" class="box top">
+		    	<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
 		    </div>
 
 		    <div id="3" class="box top">
+		    	<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
 		    </div>
 		    <div id="4" class="box clear left">
+		    	<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
 		    </div>
 		    <div id="5" class="box">
+		    	<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
 		    </div>
 		    <div id="6" class="box">
+		    	<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
 		    </div>
 		    <div id="7" class="box clear left bottom">
+		    	<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
 		    </div>
 		    <div id="8" class="box bottom">
+		    	<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
 		    </div>
 		    <div id="9" class="box bottom">
+		    	<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
 		    </div>
 		</div>
 
