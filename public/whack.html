@@ -26,7 +26,8 @@
 				 		timer -= 1;
 				 		$('.timer').html(timer);
 				 		if (timer == 0){
-				 			alert('GAME OVER!');
+				 			clearInterval(timerID);
+				 			alert('GAME OVER');
 				 		}
 				 	}
 			});
@@ -40,41 +41,29 @@
 </head> 
 	<body>
 		<h1>Whack-A-Mole!!!</h1>
-		<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
 		<h3>Score: </h3> <h3 class="score">0</h3>
 		<h3>Timer: </h3> <h3 class="timer">30</h3>
-
 		<p>
 			<button type="button">Start Game</button>
 		</p>
-		<div>
+		<div class="centered">
 		    <div id="1" class="box left top">
-		    	<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
 		    </div>
 		    <div id="2" class="box top">
-		    	<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
 		    </div>
-
-		    <div id="3" class="box top">
-		    	<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
+			<div id="3" class="box top">
 		    </div>
 		    <div id="4" class="box clear left">
-		    	<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
 		    </div>
 		    <div id="5" class="box">
-		    	<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
 		    </div>
 		    <div id="6" class="box">
-		    	<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
 		    </div>
 		    <div id="7" class="box clear left bottom">
-		    	<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
 		    </div>
 		    <div id="8" class="box bottom">
-		    	<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
 		    </div>
 		    <div id="9" class="box bottom">
-		    	<!-- <img src="mole.jpeg" alt="mole" id="mole" style="display:none;cursor:pointer"> -->
 		    </div>
 		</div>
 
