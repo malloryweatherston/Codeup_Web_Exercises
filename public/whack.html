@@ -27,6 +27,7 @@
 				 		$('.timer').html(timer);
 				 		if (timer == 0){
 				 			clearInterval(timerID);
+				 			clearInterval(intervalID);
 				 			alert('GAME OVER');
 				 		}
 				 	}
@@ -47,19 +48,19 @@
 			<button type="button">Start Game</button>
 		</p>
 		<div class="centered">
-		    <div id="1" class="box left top">
+		    <div id="1" class="box top">
 		    </div>
 		    <div id="2" class="box top">
 		    </div>
 			<div id="3" class="box top">
 		    </div>
-		    <div id="4" class="box clear left">
+		    <div id="4" class="box clear">
 		    </div>
 		    <div id="5" class="box">
 		    </div>
 		    <div id="6" class="box">
 		    </div>
-		    <div id="7" class="box clear left bottom">
+		    <div id="7" class="box clear bottom">
 		    </div>
 		    <div id="8" class="box bottom">
 		    </div>
