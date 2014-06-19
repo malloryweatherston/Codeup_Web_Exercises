@@ -12,7 +12,7 @@ class Filestore {
     /**
      * Returns array of lines in $this->filename
      */
-    function read_lines()
+    function add_file()
     {
         $items = []; 
         $filesize = filesize($filename);
@@ -26,7 +26,7 @@ class Filestore {
     /**
      * Writes each element in $array to a new line in $this->filename
      */
-    function write_lines($array)
+    function save_file($array)
     {
          $handle = fopen($filename, 'w');
         foreach ($items as $item) {
@@ -38,7 +38,7 @@ class Filestore {
     /**
      * Reads contents of csv $this->filename, returns an array
      */
-    function read_csv()
+    function read_address_book()
     {
         $entries = [];
             $handle = fopen($this->filename, 'r');
@@ -56,7 +56,7 @@ class Filestore {
     /**
      * Writes contents of $array to csv $this->filename
      */
-    function write_csv($big_array)
+    function write_address_book($big_array)
     {
         $handle = fopen($this->filename, 'w');
         foreach($big_array as $fields) {

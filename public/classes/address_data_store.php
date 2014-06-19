@@ -8,19 +8,9 @@ class AddressDataStore extends Filestore{
     {	
     	$filename = strtolower($filename);
     	parent::__construct($filename);
-    	echo $this->filename; 
+    	//echo $this->filename; 
 
     }
-
-    public function read_address_book()
-    {
-        
-    }
-
-    public function write_address_book($big_array) 
-    {
-
-	}
 
 }
 
