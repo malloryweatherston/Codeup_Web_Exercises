@@ -6,7 +6,7 @@ class Filestore {
 
     function __construct($filename = '') 
     {
-        $this->filename = $filename
+        $this->filename = $filename;
     }
 
     /**
