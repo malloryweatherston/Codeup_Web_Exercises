@@ -2,6 +2,7 @@
 // include Conversation class file
 require_once('classes/address_data_store.php');
 
+
 $ads = new AddressDataStore('address_book.csv');
 
 
@@ -11,8 +12,6 @@ $heading = ['name', 'address', 'city', 'state', 'zip'];
 $address_book = [];
 
 
-//$ads->filename = ; 
-//$address_book = read_csv($filename);
 $address_book = $ads->read_address_book();
 
 
@@ -28,7 +27,7 @@ if (!empty($_POST['Add_Name']) && !empty($_POST['Add_Address']) && !empty($_POST
 
     array_push($address_book, $new_address);
     $ads->write_address_book($address_book);
-	//write_csv($address_book, $filename); 
+	
 } else {
 	foreach ($_POST as $key => $value) {
         if (empty($value)) {
@@ -67,7 +66,7 @@ if (count($_FILES) > 0 && $_FILES['file1']['error'] == 0) {
 
 	//Error echoed if file type is not "text/plain"
 	}else {
-		$error_message = "ERROR: File Type Must be text/csv." .PHP_EOL;
+		echo $error_message = "ERROR: File Type Must be text/csv." .PHP_EOL;
 	}
 	
 }
