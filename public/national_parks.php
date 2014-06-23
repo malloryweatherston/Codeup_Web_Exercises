@@ -56,10 +56,10 @@ $prevPage = $page - 1;
                 </tr>
       		 <? endforeach; ?>
 			</table>
-			<? if ($page >= 2) : ?>
+			<? if ($page > 1) : ?>
 			<a href="/national_parks.php?page=<?= $prevPage; ?>"> Previous</a>
 			<? endif ?>
-			<? if ($page < 3) : ?>
+			<? if ($page < $numPages) : ?>
 			<a href="/national_parks.php?page=<?= $nextPage;?>">Next</a>
 			<? endif ?>
 		</body>
