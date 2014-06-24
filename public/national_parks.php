@@ -39,8 +39,7 @@ $prevPage = $page - 1;
 $parks_array= getParks($dbc);
 
 
-if (!empty($_POST)) {
-
+if (!empty($_POST['name']) && !empty($_POST['location']) && !empty($_POST['date_established']) && !empty($_POST['area_in_acres']) && !empty($_POST['description'])) {
 	// Get new instance of PDO object
 	$dbc = new PDO('mysql:host=127.0.0.1;dbname=codeup_pdo_test_db', 'mallory', 'malmal');
 
@@ -66,6 +65,7 @@ if (!empty($_POST)) {
 	       if (empty($value)) {
 	            echo "<h1>" . ucfirst($key) .  " is empty.</h1>";
 	    	}
+	
 }
 
 
@@ -79,8 +79,6 @@ if (!empty($_POST)) {
 		<title>National Parks</title>
 	</head>
 		<body>
-			<? var_dump($_POST); ?>
-			<? var_dump($parks_array); ?>
 			<h2>National Parks</h2>
 			<table>
 				<table border='1'>
