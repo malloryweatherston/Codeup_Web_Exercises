@@ -5,7 +5,7 @@ $dbc = new PDO('mysql:host=127.0.0.1;dbname=codeup_pdo_test_db', 'mallory', 'mal
 //Tell PDO to throw exceptions on error
 $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 function getParks($dbc) {
-// Bring the $dbc variable into scope somehow
+// Bring the $dbc variable into scope and Create Limit and offset
 	$page = getOffset(); 
 	$stmt = $dbc->prepare('SELECT * FROM national_parks LIMIT :LIMIT OFFSET :OFFSET');
 	$stmt->bindValue(':LIMIT' , 4, PDO::PARAM_INT);
@@ -14,10 +14,9 @@ function getParks($dbc) {
 
     $stmt = $stmt->fetchAll((PDO::FETCH_ASSOC));
     return $stmt;
-
-    //return $dbc->query('SELECT * FROM national_parks LIMIT 4 OFFSET ' . getOffset())->fetchAll(PDO::FETCH_ASSOC);
 }
 
+//Create Function to get an offset for each page
 function getOffset(){
 	$page = isset($_GET['page']) ? $_GET['page'] : 1;
 	return($page - 1) * 4;
@@ -49,7 +48,6 @@ if (!empty($_POST['name']) && !empty($_POST['location']) && !empty($_POST['date_
 	$stmt = $dbc->prepare("INSERT INTO national_parks(name, location, date_established, area_in_acres, description) VALUES (:name, :location, :date_established, :area_in_acres, :description)");
 
 
-	//foreach ($national_parks as $national_park) {
 		$stmt->bindValue(':name', $_POST['name'], PDO::PARAM_STR);
 		$stmt->bindValue(':location', $_POST['location'], PDO::PARAM_STR);
 		$stmt->bindValue(':date_established', $_POST['date_established'], PDO::PARAM_STR);
@@ -58,7 +56,7 @@ if (!empty($_POST['name']) && !empty($_POST['location']) && !empty($_POST['date_
 		
 	   
 	    $stmt->execute();
-	//}
+	
 
 } else {
 		foreach ($_POST as $key => $value) 
