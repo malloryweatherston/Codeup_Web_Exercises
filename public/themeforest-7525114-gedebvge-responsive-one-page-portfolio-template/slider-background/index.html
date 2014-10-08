@@ -1,0 +1,504 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>Weatherston</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+    
+        <!-- Le styles -->
+        <style>
+		/* Preloader */
+		#preloader {
+			position:fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			background-color:#fff; /* change if the mask should have another color then white */
+			z-index:999999; /* makes sure it stays on top */
+		}
+		
+		#status {
+			width:200px;
+			height:200px;
+			position:absolute;
+			left:50%; /* centers the loading animation horizontally one the screen */
+			top:50%; /* centers the loading animation vertically one the screen */
+			background-image:url(images/preloader.gif); /* path to your loading animation */
+			background-repeat:no-repeat;
+			background-position:center;
+			margin:-100px 0 0 -100px; /* is width and height divided by two */
+		}
+		#status p{text-align:center;}
+		</style>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/owl.carousel.css" rel="stylesheet">
+        <link href="css/prettyPhoto.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    
+        <!-- Fav and touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="shortcut icon" href="images/favicon.png"><!--favicon image-->
+    </head>
+
+	<body>
+    	<!-- Preloader -->
+        <div id="preloader">
+            <div id="status"><img src="../slider-background/images/png-2.png" alt="loading content.."></div>
+        </div>
+        
+    	<!--HEADER START-->
+    	<section id="header" class="clearfix">
+        	<div class="container">
+            	<div class="logo clearfix">
+                	<a href="index.html"><img alt="logo" src="images/rsz_png-2.png"></a>
+                </div><!--/.logo-->
+                <div class="clearfix menu-box home">
+                	<ul class="navigation">
+                    	<li><a href="#home">Home</a></li>
+                    	<li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul><!--/.navigation-->
+                </div><!--/.menu-box-->
+                
+                <div class="box-mobile hidden-lg hidden-md">
+                	<div class="menu-btn" data-toggle="collapse" data-target=".nav-collapse">
+                    	<span class="fa fa-bars"></span>
+                    </div>
+                    <ul class="nav-collapse mobile-menu hidden-lg hidden-md"></ul>
+                </div>
+            </div>
+        </section><!--/header-->
+        <!--HEADER END-->
+        
+        <!--HOME START-->
+        <section id="home">
+        <div class="slider home-slider clearfix" data-auto-play="6000">
+        
+        	<div class="slide img-bg clearfix" data-background="../slider-background/images/slider/DeathtoStock_NotStock7.jpg">
+            	<div class="slider-mask"></div>
+                <div class="caption-box">
+                	<div class="container">
+                    	<p> Design You Can Appreciate</p>
+                    	<div class="line-container">
+                        	<div class="left-line"></div><i class="fa fa-bookmark-o"></i><div class="right-line"></div>
+                        </div><!--/.line-container-->
+                        <h3>Clean</h3>
+                        <div class="line-container">
+                        	<div class="bottom-line"></div>
+
+
+                        </div><!--/.line-container-->
+                        
+                    </div>
+                </div>
+        	</div><!--/.slider1-->
+            
+        	<div class="slide img-bg clearfix" data-background="../slider-background/images/slider/DeathtoStock_NotStock4.jpg">
+            	<div class="slider-mask"></div>
+                <div class="caption-box">
+                	<div class="container">
+                    	<p>Solutions You Can Count on</p>
+                    	<div class="line-container">
+                        	<div class="left-line"></div><i class="fa fa-star-o"></i><div class="right-line"></div>
+                        </div><!--/.line-container-->
+                        <h3>Creative</h3>
+                        <div class="line-container">
+                        	<div class="bottom-line"></div>
+                        </div><!--/.line-container-->
+                        
+                    </div>
+                </div>
+        	</div><!--/.slider2-->
+            
+            <div class="slide img-bg clearfix" data-background="../slider-background/images/slider/DeathtoStock_NotStock.jpg">
+            	<div class="slider-mask"></div>
+                <div class="caption-box">
+                	<div class="container">
+                    	<p>Unique Web Products</p>
+                    	<div class="line-container">
+                        	<div class="left-line"></div><i class="fa fa-times"></i><div class="right-line"></div>
+                        </div><!--/.line-container-->
+                        <h3>Hand-Crafted</h3>
+                        <div class="line-container">
+                        	<div class="bottom-line"></div>
+                        </div><!--/.line-container-->
+                        
+                    </div>
+                </div>
+        	</div><!--/.slider3-->
+        </div><!--/.slider-->
+        </section><!--/home-->
+        <!--HOME END-->
+        
+        <!--PORTFOLIO START-->
+        <section id="portfolio" class="clearfix">
+        	<div class="worksajax clearfix"><!--ajax portfolio here--></div>
+        	<div class="container-portfolio clearfix">
+        	<!--PORTFOLIO FILTER-->
+            <ul class="port-filter">
+            	<li><a class="active" href="#" data-filter="*">Recent Projects</a></li>
+            </ul>
+            <!--PORTFOLIO FILTER END-->
+             
+            <!--PORTFOLIO ITEM LIST-->
+            <div class="portfolio-body clearfix">
+            	<div class="col-lg-3 col-md-4 col-sm-6 development port-item">
+                	<div class="bw-box clearfix">
+                        <a class="port-hover port-ajax" href="../slider-background/work1.html" data-link="../slider-background/work1.html">
+                            <h3>Simple Soiree</h3>
+                            <p>Web Development, Web Design</p>
+                            <i class="port-icon fa fa-html5"></i>
+                        </a>
+                        <img alt="work" src="../slider-background/images/work/1.jpg">
+                    </div>
+                </div><!--/.col-md-4-->
+                <div class="col-lg-3 col-md-4 col-sm-6 photography design port-item">
+                	<div class="bw-box clearfix">
+                        <a class="port-hover port-ajax" href="#" data-link="work2.html">
+                            <h3>Like an Angel</h3>
+                            <p>Photography, Web Design</p>
+                            <i class="port-icon fa fa-camera-retro"></i>
+                        </a>
+                        <img alt="work" src="images/work/2.jpg">
+                    </div>
+                </div><!--/.col-md-4-->
+                <div class="col-lg-3 col-md-4 col-sm-6 design brand port-item">
+                	<div class="bw-box clearfix">
+                        <a class="port-hover port-ajax" href="#" data-link="work3.html">
+                            <h3>Lives of somewhat</h3>
+                            <p>Web Design, Brand Identity</p>
+                            <i class="port-icon fa fa-css3"></i>
+                        </a>
+                        <img alt="work" src="images/work/3.jpg">
+                    </div>
+                </div><!--/.col-md-4-->
+                <div class="col-lg-3 col-md-4 col-sm-6 brand photography port-item">
+                	<div class="bw-box clearfix">
+                        <a class="port-hover port-ajax" href="#" data-link="work4.html">
+                            <h3>The journey towards</h3>
+                            <p>Brand Identity, Photography</p>
+                            <i class="port-icon fa fa-headphones"></i>
+                        </a>
+                        <img alt="work" src="images/work/4.jpg">
+                    </div>
+                </div><!--/.col-md-4-->
+                
+                
+                
+        	</div><!--/.portfolio-body-->
+            <!--PORTFOLIO ITEM LIST END-->
+            </div><!--/.container-porfolio-->
+        </section><!--/portfolio-->
+        <!--PORTFOLIO END-->
+        
+        <!--ABOUT START-->
+        <section id="about" class="content clearfix">
+        	<div class="container">
+                
+                <div class="content-divider clearfix"></div>
+                
+                <div class="row">
+                	<div class="col-md-6">
+                    <div class="about-slider slider">
+                        <div class="slide"><img alt="" src="../slider-background/images/png-2.png"></div>
+                
+                    </div><!--/.about-slider-->
+                    <div class="spacing40"></div>
+                    </div><!--/.col-md-6-->
+                    <div class="col-md-6">
+                    	<h2 class="content-title">We'll make your digital dreams a reality. </h2>
+                        <p><strong>From simple website design to full on app development, Weatherston Digital is a creative and affordable solution for modern dreamers and doers.</strong></p>
+                    	<div class="spacing40"></div>
+                	</div><!--/.col-md-6-->   
+                </div><!--/.row-->
+                    
+                <div class="content-divider clearfix"></div>
+                
+                <!--services start-->
+                <div id="services" class="row">
+                	<div class="col-lg-12">
+                    	<h2 class="content-title">What We Do</h2>
+                         <p><strong> Let us help you develop, design, and integrate cool features into your app or website.  Weatherston Digital will be there for every step of the development process.</strong></p>
+                    </div><!--/.col-lg-12-->
+                     <div class="spacing40"></div>
+
+                	<div class="col-lg-4 col-md-6">
+                    	<i class="services-icon fa fa-list-alt"></i>
+                        <h4 class="services-title">Web Design</h4>
+                        <div class="spacing40"></div>
+                    </div><!--/.col-lg-4-->
+                    
+                    <div class="col-lg-4 col-md-6">
+                    	<i class="services-icon fa fa-wrench"></i>
+                        <h4 class="services-title">Web Development</h4>
+                        <div class="spacing40"></div>
+                    </div><!--/.col-lg-4-->
+    
+                    
+                    <div class="col-lg-4 col-md-6">
+                    	<i class="services-icon fa fa-globe"></i>
+                        <h4 class="services-title">GIS Mapping</h4>
+                        <div class="spacing40"></div>
+                    </div><!--/.col-lg-4-->
+                   
+                </div><!--/services-->
+            </div><!--/.container-->
+        </section>
+		<!--ABOUT END-->
+        
+        
+        <!--TEAM START-->
+        <section id="team" class="clearfix">
+        		<!--TEAM TAB START-->
+        		<div class="nav-team clearfix">
+                	<div class="col-lg-3 col-sm-6 team-list">
+                        <div class="bw-box clearfix">
+                            <a class="team-hover" href="#team1" data-toggle="tab">
+                                <h3>Mallory Weatherston</h3>
+                                <p>Creative Director</p>
+                            </a>
+                            <img alt="work" src="images/team/1.jpg">
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-lg-3 col-sm-6 team-list">
+                        <div class="bw-box clearfix">
+                            <a class="team-hover" href="#team2" data-toggle="tab">
+                                <h3>Epha Arnas</h3>
+                                <p>Web Designer</p>
+                            </a>
+                            <img alt="work" src="images/team/2.jpg">
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-lg-3 col-sm-6 design team-list">
+                        <div class="bw-box clearfix">
+                            <a class="team-hover" href="#team3" data-toggle="tab">
+                                <h3>Titik Kadarish</h3>
+                                <p>Web Developer</p>
+                            </a>
+                            <img alt="work" src="images/team/3.jpg">
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-lg-3 col-sm-6 team-list">
+                        <div class="bw-box clearfix">
+                            <a class="team-hover" href="#team4" data-toggle="tab">
+                                <h3>Hetikus Endang</h3>
+                                <p>Creative Photographer</p>
+                            </a>
+                            <img alt="work" src="images/team/4.jpg">
+                        </div>
+                    </div><!--/.col-md-4-->
+                </div><!--/nav-team-->
+                <!--TEAM TAB END -->
+                
+                <!--TEAM DETAIL START-->
+                <div id="teamtab" class="clearfix">
+                
+                	<div class="tab-content">
+                    
+                        <div id="team1" class="team-bg img-bg clearfix tab-pane fade in" data-background="images/team/bg1.jpg">
+                            <div class="team-mask"></div>
+                            <div class="container team-detail">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h3 class="team-title">Mallory Weatherston</h3>
+                                        <p>As a child, Ali Neuman narrowly escaped being murdered by Inkhata, a militant political party at war with Nelson Mandela’s African National Congress. 
+                                        Only he and his mother survived the carnage of those years. But as with many survivors, the psychological scars remain. </p>
+                                        <p>Fed up with Jedikiah’s constant lies about his father, Stephen makes a choice about his alliances. Trusting in Ultra and Hillary, Stephen wants 
+                                        to bring in a break-out to Ultra to see if things have really changed, much to Cara’s dismay. Meanwhile, Stephen’s brother goes missing after 
+                                        Jedikiah forces Stephen to protect him</p>
+                                        <div class="spacing20"></div>
+                                        <blockquote>
+                                            <i class="fa fa-quote-left bq-icon"></i>
+                                            <p>A wild teenage girl orchestrates a romance between her nanny and her father, who is a recovering addict.</p>
+                                        </blockquote>
+                                        <div class="spacing40"></div>
+                                        <ul class="team-icon">
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-vk"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                        </ul><!--/.team-icon-->
+                                    </div><!--/.col-md-6-->
+                                </div><!--/.row-->
+                                <div class="team-close"><i class="fa fa-times"></i></div>
+                            </div><!--/.container-->
+                        </div><!--/.team-bg-->
+                    
+                        <div id="team2" class="team-bg img-bg clearfix tab-pane fade in" data-background="images/team/bg2.jpg">
+                            <div class="team-mask"></div>
+                            <div class="container team-detail">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h3 class="team-title">Epha Arnas</h3>
+                                        <p>Fed up with Jedikiah’s constant lies about his father, Stephen makes a choice about his alliances. Trusting in Ultra and Hillary, Stephen wants 
+                                        to bring in a break-out to Ultra to see if things have really changed, much to Cara’s dismay. Meanwhile, Stephen’s brother goes missing after 
+                                        Jedikiah forces Stephen to protect him</p>
+                                        <p>As a child, Ali Neuman narrowly escaped being murdered by Inkhata, a militant political party at war with Nelson Mandela’s African National Congress. 
+                                        Only he and his mother survived the carnage of those years. But as with many survivors, the psychological scars remain. </p>
+                                        <div class="spacing20"></div>
+                                        <blockquote>
+                                            <i class="fa fa-quote-left bq-icon"></i>
+                                            <p>Fast talking security guard Ben joins his cop brother in law James on a 24 hour patrol of Atlanta in order to prove himself worthy
+                                             of marrying Angela.</p>
+                                        </blockquote>
+                                        <div class="spacing40"></div>
+                                        <ul class="team-icon">
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-vk"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                        </ul><!--/.team-icon-->
+                                    </div><!--/.col-md-6-->
+                                </div><!--/.row-->
+                                <div class="team-close"><i class="fa fa-times"></i></div>
+                            </div><!--/.container-->
+                        </div><!--/.team-bg-->
+                        
+                        <div id="team3" class="team-bg img-bg clearfix tab-pane fade in" data-background="images/team/bg3.jpg">
+                            <div class="team-mask"></div>
+                            <div class="container team-detail">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h3 class="team-title">Titik Kadarsih</h3>
+                                        <p>Fed up with Jedikiah’s constant lies about his father, Stephen makes a choice about his alliances. Trusting in Ultra and Hillary, Stephen wants 
+                                        to bring in a break-out to Ultra to see if things have really changed, much to Cara’s dismay. Meanwhile, Stephen’s brother goes missing after 
+                                        Jedikiah forces Stephen to protect him</p>
+                                        <p>As a child, Ali Neuman narrowly escaped being murdered by Inkhata, a militant political party at war with Nelson Mandela’s African National Congress. 
+                                        Only he and his mother survived the carnage of those years. But as with many survivors, the psychological scars remain. </p>
+                                        <div class="spacing20"></div>
+                                        <blockquote>
+                                            <i class="fa fa-quote-left bq-icon"></i>
+                                            <p>Fast talking security guard Ben joins his cop brother in law James on a 24 hour patrol of Atlanta in order to prove himself worthy
+                                             of marrying Angela.</p>
+                                        </blockquote>
+                                        <div class="spacing40"></div>
+                                        <ul class="team-icon">
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-vk"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                        </ul><!--/.team-icon-->
+                                    </div><!--/.col-md-6-->
+                                </div><!--/.row-->
+                                <div class="team-close"><i class="fa fa-times"></i></div>
+                            </div><!--/.container-->
+                        </div><!--/.team-bg-->
+                        
+                        <div id="team4" class="team-bg img-bg clearfix tab-pane fade in" data-background="images/team/bg4.jpg">
+                            <div class="team-mask"></div>
+                            <div class="container team-detail">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h3 class="team-title">Hetikus Endang</h3>
+                                        <p>Fed up with Jedikiah’s constant lies about his father, Stephen makes a choice about his alliances. Trusting in Ultra and Hillary, Stephen wants 
+                                        to bring in a break-out to Ultra to see if things have really changed, much to Cara’s dismay. Meanwhile, Stephen’s brother goes missing after 
+                                        Jedikiah forces Stephen to protect him</p>
+                                        <p>As a child, Ali Neuman narrowly escaped being murdered by Inkhata, a militant political party at war with Nelson Mandela’s African National Congress. 
+                                        Only he and his mother survived the carnage of those years. But as with many survivors, the psychological scars remain. </p>
+                                        <div class="spacing20"></div>
+                                        <blockquote>
+                                            <i class="fa fa-quote-left bq-icon"></i>
+                                            <p>Fast talking security guard Ben joins his cop brother in law James on a 24 hour patrol of Atlanta in order to prove himself worthy
+                                             of marrying Angela.</p>
+                                        </blockquote>
+                                        <div class="spacing40"></div>
+                                        <ul class="team-icon">
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-vk"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                        </ul><!--/.team-icon-->
+                                    </div><!--/.col-md-6-->
+                                </div><!--/.row-->
+                                <div class="team-close"><i class="fa fa-times"></i></div>
+                            </div><!--/.container-->
+                        </div><!--/.team-bg-->
+                        
+                        
+                    </div><!--/.tab-content-->
+                    
+                </div><!--/teamtab-->
+                <!--TEAM DETAIL END-->
+        </section><!--/.team-->
+        <!--TEAM END-->
+		
+        <!--CONTACT START-->
+        <section align="center" id="contact" class="content">
+        	<div class="container">
+                <div class="row">
+                    
+                        <h2 class="content-title">Contact Us</h2>
+
+                        <div class="content-divider clearfix"></div>
+                    	<ul class="address-list">
+                            <li><i class="fa fa-phone"></i> 210-215-1933</li>
+                            <li><i class="fa fa-envelope"></i>mjw0909@sbcglobal.net</a></li>
+                        </ul><!--/.address-list-->
+                        <div class="spacing40"></div>
+                    
+                
+                 
+                    
+                </div><!--/.row-->
+            </div><!--/.container-->
+        </section><!--/contact-->
+        <!--CONTACT END-->
+        
+        <div class="transparent clearfix"><!--to create margin bottom on contact section--></div>
+        
+        <!--FOOTER START-->
+        <section class="footer clearfix">
+        	<div class="container">
+            	<ul class="footer-icon">
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="http://www.linkedin.com/in/malloryweatherston"><i class="fa fa-linkedin"></i></a></li>
+                </ul><!--/.team-icon-->
+                <div class="footer-divider"></div>
+                <p>Photos Courtesy of <a href="http://deathtothestockphoto.com/">Death To the Stock Photo</p>
+            </div>
+        </section>
+		<!--FOOTER END-->
+        
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.js"></script>
+    <script type="text/javascript" src="js/jquery.imagesloaded.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="js/jquery.sticky.js"></script> 
+	<script type="text/javascript" src="js/jquery.nav.js"></script>
+    <script type="text/javascript" src="js/jquery.scrollTo.js"></script>
+    <script type="text/javascript" src="js/isotope.pkgd.js"></script>
+	<script type="text/javascript" src="js/jquery.BlackAndWhite.min.js"></script>
+	<script type="text/javascript" src="js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="js/contact.js"></script>
+    <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="js/jquery.imagesloaded.min.js"></script>
+    <script type="text/javascript" src="js/superfish.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+    
+
+
+
+ 
+
+
+  	
+
+	</body>
+</html>
